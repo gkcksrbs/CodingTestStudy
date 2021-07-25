@@ -1,4 +1,4 @@
-# Coding Test Study
+# Coding Test Study with Python
 
 ## 코딩테스트 스터디를 위한 Repository
 
