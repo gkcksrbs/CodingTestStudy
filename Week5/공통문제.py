@@ -32,6 +32,7 @@ def bfs(graph):
                         q.append((nx, ny, dist+1))
                         if graph[nx][ny] == 'P':
                             return 0
+
     return 1
 
 
