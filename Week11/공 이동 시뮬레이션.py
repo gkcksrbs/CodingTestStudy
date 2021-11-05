@@ -1,32 +1,56 @@
 # 프로그래머스 월간 코드 챌린지 시즌3 공 이동 시뮬레이션
 # https://programmers.co.kr/learn/courses/30/lessons/87391
+rangeX = []
+
+
 def solution(n, m, x, y, queries):
+    global rangeX
     answer = -1
-    moveX, moveY = [], []
     rangeX = [x, x]
     rangeY = [y, y]
-    # for query in queries:
-    #     if query[0] == 2 or query[0] == 3:
-    #         if query[0] == 2:
-    #             moveX.append(-query[1])
-    #         else:
-    #             moveX.append(query[1])
-    #     else:
-    #         if query[0] == 0:
-    #             moveY.append(-query[1])
-    #         else:
-    #             moveY.append(query[1])
+    print(rangeX)
     for i in range(len(queries)-1, -1, -1):
         if queries[i][0] == 2 or queries[i][0] == 3:
             if queries[i][0] == 2:
-                if range
-                rangeX[0] += queries[i][1]
-                rangeX[1] += queries[i][1]
+                if rangeX[0] != 0:
+                    rangeX[0] += queries[i][1]
+                if rangeX[1] + queries[i][1] > n:
+                    rangeX[1] = n-1
+                else:
+                    rangeX[1] += queries[i][1]
+            else:
+                if rangeX[1] != n-1:
+                    rangeX[1] -= queries[i][1]
+                if rangeX[0] - queries[i][1] < 0:
+                    rangeX[0] = 0
+                else:
+                    rangeX[0] -= queries[i][1]
+        else:
+            if rangeY[1] != m-1:
+                rangeY[1] += queries[i][1]
+            if rangeY[0] + queries[i][1] > m:
 
-    print(rangeX)
-    # print(moveX)
-    # print(moveY)
+            print(rangeX)
+
+    # ud = []
+    # lr = []
+    # for query in queries:
+    #     if query[0] == 2 or query[0] == 3:
+    #         ud.append(query)
+    #     else:
+    #         lr.append(query)
+    #
+    # print(ud)
+    # print(lr)
     return answer
+
+
+# def up_down(query):
+#     if query[0] == 2:
+#         if rangeX[0] != 0:
+#             rangeX[0] += query[1]
+#         if rangeX[1] + query[1] > n
+#     return
 
 
 if __name__ == '__main__':
