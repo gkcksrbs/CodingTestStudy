@@ -14,6 +14,7 @@ def solution(num):
         return -1
     return answer
 
+
 if __name__ == '__main__':
     print(solution(6))
     print(solution(626331))
